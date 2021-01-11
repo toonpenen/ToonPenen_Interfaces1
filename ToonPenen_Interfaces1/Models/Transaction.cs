@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ToonPenen_Interfaces1.Models
 {
-    class Transaction : Bank, ITransaction
+    public class Transaction : Bank, ITransaction
     {
         private readonly string _code;
         private readonly string _date;
@@ -38,18 +34,20 @@ namespace ToonPenen_Interfaces1.Models
 
         public string ShowBankName()
         {
+
+            Console.WriteLine(BankName);
             return BankName;
         }
 
         public void ShowTransaction()
         {
-            Console.WriteLine($"BANK {ShowBankName()} ADRESS {Address}");
+            Console.WriteLine($"BANK {BankName} ADRESS {Address}");
             
-            Console.WriteLine($"Transaction : + {_code}");
+            Console.WriteLine($"Transaction : {_code}");
 
-            Console.WriteLine($"Date : + {_date}");
+            Console.WriteLine($"Date : {_date}");
 
-            Console.WriteLine($"Amount :  + {_amount}");
+            Console.WriteLine($"Amount :  {_amount}");
             GetAmount();
         }
 
